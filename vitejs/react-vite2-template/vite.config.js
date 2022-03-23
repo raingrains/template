@@ -10,10 +10,10 @@ export default defineConfig({
     // 设置eslint
     eslintPlugin({
       include: ['src/**/*.jsx', 'src/**/*.js'], // 检查的文件
-    })
+    }),
   ],
-  server:{
-    port:8080
+  server: {
+    port: 8080,
   },
   resolve: {
     alias: {
