@@ -1,6 +1,4 @@
-import React from 'react'
 import { Button } from 'antd'
-import { useNavigate } from 'react-router-dom'
 import module from './index.module.less'
 
 export default function Home() {

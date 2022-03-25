@@ -12,6 +12,7 @@ module.exports = {
     'plugin:prettier/recommended',
     'eslint:recommended',
     'standard-react',
+    './.eslintrc-auto-import.json',
   ],
   settings: {
     react: {
@@ -22,6 +23,7 @@ module.exports = {
     parser: 'babel-eslint',
   },
   rules: {
+    'react/react-in-jsx-scope': 'off', // 取消jsx文件中必须引入React
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'jsx-one-expression-per-line': 'off',

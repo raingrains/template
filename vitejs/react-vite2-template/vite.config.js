@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import eslintPlugin from 'vite-plugin-eslint' // 引入vite-plugin-vue
 import path from 'path'
-
+import AutoImport from 'unplugin-auto-import/vite'
 import styleImport from 'vite-plugin-style-import' // 按需加载组件样式文件
 // import theme from './src/assets/theme.js'
 
@@ -26,9 +26,17 @@ export default defineConfig({
         },
       ],
     }),
+    AutoImport({
+      imports: ['react', 'react-router-dom'],
+      eslintrc: {
+        enabled: true, // 默认false, true启用。生成一次就可以，避免每次工程启动都生成
+        filepath: './.eslintrc-auto-import.json', // 生成json文件
+        globalsPropValue: true,
+      },
+    }),
   ],
   server: {
-    port: 8080,
+    port: 8081,
   },
   resolve: {
     alias: {

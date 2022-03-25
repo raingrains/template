@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation, useParams, useSearchParams } from 'react-router-dom'
+// import { useLocation, useParams, useSearchParams } from 'react-router-dom'
 
 export default function About() {
   const [searchParams] = useSearchParams()

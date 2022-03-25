@@ -1,16 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import * as routerDom from 'react-router-dom'
 import { HashRouter } from 'react-router-dom'
 import 'normalize.css'
 import './main.less'
-import Route from './routes/route'
+import RouteDom from './routes/route'
 
-console.log(routerDom)
 ReactDOM.render(
   <React.StrictMode>
     <HashRouter>
-      <Route />
+      <RouteDom />
     </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
