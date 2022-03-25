@@ -10,6 +10,7 @@ module.exports = {
     'eslint:recommended',
     '@vue/standard',
     '@vue/prettier', //
+    './.eslintrc-auto-import.json',
   ],
   parserOptions: {
     parser: 'babel-eslint',

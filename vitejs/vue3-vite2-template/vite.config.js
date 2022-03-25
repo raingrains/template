@@ -5,10 +5,11 @@ import path from 'path'
 import ElementPlus from 'unplugin-element-plus/vite'
 // 自动引入
 import Components from 'unplugin-vue-components/vite'
-import resolves, { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import AutoImport from 'unplugin-auto-import/vite'
 
 // 打印所有的resolves 查看适用ui库
-console.log(resolves)
+console.log(AutoImport)
 // https://vitejs.dev/config/
 export default defineConfig({
   css: {
@@ -36,6 +37,15 @@ export default defineConfig({
           importStyle: 'sass',
         }),
       ],
+    }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+      imports: ['vue', 'vue-router'],
+      eslintrc: {
+        enabled: false, // 默认false, true启用。生成一次就可以，避免每次工程启动都生成
+        filepath: './.eslintrc-auto-import.json', // 生成json文件
+        globalsPropValue: true,
+      },
     }),
   ],
   resolve: {
